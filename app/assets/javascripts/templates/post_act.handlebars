@@ -1,12 +1,22 @@
 <div id="post-act-page" class="content-page">
     <div class="header">
+        {{#unless controllers.application.isOnboarding }}
+        {{#if controllers.application.isFromMap }}
+            <button {{action showMap}} class="nav-btn left-nav">Map</button>
+        {{else}}
+            <button {{action showList}} class="nav-btn left-nav">List</button>
+        {{/if}}
+        {{/unless}}
         <div class="title">Post Act</div>
     </div>
     <div class="content">
-        <p class="instructions">Impressive!  Share your act with others in the community</p>
-        <div class="timer">
-            {{timeLeftFormatted}}
-        </div>
+        <p class="instructions">
+        {{#if controllers.application.isOnboarding }}
+        Impressive!  Share your act with others in the community
+        {{else}}
+        Just did a mission? Write it up below and post! 
+        {{/if}}
+        </p>
         <div class="mission-content">
             <img src="assets/missions/hands.gif" />
             <textarea>I gave a someone a free hug</textarea>

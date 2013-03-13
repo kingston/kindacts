@@ -5,14 +5,16 @@ KindActs.Router.map ->
   @route 'in_mission', { path: "/mission" }
   @route 'post_act', { path: "/post" }
   @route 'act_map', { path: "/map" }
+  @route 'act_list', { path: "/list" }
+  @route 'act_view', { path: "/view" }
 
 KindActs.IndexRoute = Ember.Route.extend
   redirect: ->
     if appSettings.isLoggedIn
-      #TODO:
-      @transitionTo 'landing'
+      @transitionTo 'act_map'
     else
       @transitionTo 'landing'
+      @set('applicationController.isOnboarding', true)
 
 KindActs.ActMapRoute = Ember.Route.extend
   setupController: (controller) ->
