@@ -1,2 +1,3 @@
-KindActs.ApplicationController = Ember.Controller.extend
+KindActs.ChooseMissionController = Ember.Controller.extend
   init: ->
+

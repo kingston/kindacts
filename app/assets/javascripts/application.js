@@ -12,10 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require swipe
 //= require handlebars
 //= require ember
 //= require ember-data
 //= require_self
 //= require kindacts
+
 KindActs = Ember.Application.create();
-//= require_tree .
