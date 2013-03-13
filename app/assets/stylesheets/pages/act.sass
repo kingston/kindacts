@@ -14,3 +14,35 @@
   bottom: 0
   left: 0
   right: 0
+
+.glow-marker
+  background-color: #fff
+  position: absolute
+  border: none
+  z-index: 1000
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%) /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(255,255,255,0))) /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%) /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%) /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%) /* IE10+ */
+  background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 50%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ) /* IE6-9 fallback on horizontal gradient */
+ 
++keyframes(bounceIn)
+  0%
+    +transform(scale(0.3))
+    opacity: 0
+  100%
+    +transform(scale(1))
+    opacity: 1
+
+
+.bounceIn
+  -webkit-animation-name: bounceIn
+  -moz-animation-name: bounceIn
+  -o-animation-name: bounceIn
+  animation-name: bounceIn
+  -webkit-animation-duration: 1s
+  -moz-animation-duration: 1s
+  -o-animation-duration: 1s
+  animation-duration: 1s

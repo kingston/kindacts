@@ -17,6 +17,7 @@ KindActs.InMissionController = Ember.Controller.extend
   ).property('timeLeft')
 
   init: ->
+    @_super()
     _this = @
     countdown = ->
       return if _this.isDestroyed

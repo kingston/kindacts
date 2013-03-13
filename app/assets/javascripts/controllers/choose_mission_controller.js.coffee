@@ -1,5 +1,7 @@
 KindActs.ChooseMissionController = Ember.Controller.extend
   init: ->
+    @_super()
+
   missionSelected: false
 
   selectMission: ->
