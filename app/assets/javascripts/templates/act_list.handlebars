@@ -5,11 +5,8 @@
         <button {{action addAct}} class="nav-btn right-nav add-btn"></button>
     </div>
     <div class="content">
-        {{view KindActs.ActCardView}}
-        {{view KindActs.ActCardView}}
-        {{view KindActs.ActCardView}}
-        {{view KindActs.ActCardView}}
-        {{view KindActs.ActCardView}}
-        {{view KindActs.ActCardView}}
+        {{#each act in controller}}
+            {{view KindActs.ActCardView contentBinding="act"}}
+        {{/each}}
     </div>
 </div>

@@ -9,3 +9,4 @@
 seed_file = File.join(Rails.root, 'db', 'fixtures.yml')
 config = YAML::load_file(seed_file)
 Mission.create(config["missions"])
+Act.create(config["acts"])

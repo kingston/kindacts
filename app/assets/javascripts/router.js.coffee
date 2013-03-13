@@ -21,25 +21,14 @@ KindActs.ChooseMissionRoute = Ember.Route.extend
 
 KindActs.PostActRoute = Ember.Route.extend
   setupController: (controller) ->
-    controller.set('actText', @get('applicationController.mission.act_autofill') || "I...")
+    controller.set('actText', controller.get('controllers.application.selectedMission.act_autofill') || "I...")
 
 
 KindActs.ActMapRoute = Ember.Route.extend
   setupController: (controller) ->
-    controller.set('content', [])
-    controller.pushObject
-      id: 1
-      lat: 37.42596
-      long: -122.171949
-      title: "I gave a free hug..."
-    controller.pushObject
-      id: 2
-      lat: 37.42396
-      long: -122.172949
-      title: "I gave a free hug..."
-    controller.pushObject
-      id: 3
-      lat: 37.42196
-      long: -122.171949
-      title: "I gave a free hug..."
+    controller.set('content', KindActs.Act.find())
+
+KindActs.ActListRoute = Ember.Route.extend
+  setupController: (controller) ->
+    controller.set('content', KindActs.Act.find())
 

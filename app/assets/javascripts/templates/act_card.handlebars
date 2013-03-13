@@ -1,5 +1,5 @@
-<div {{action openCard}} class="mission-content">
-    <img src="assets/missions/hands.gif" />
-    <div class="mission-description">"I gave a free hug to a friend!"</div>
-    <div class="mission-agents">@Coupa 1 minute ago</div>
+<div class="mission-content" {{bindAttr style="view.contentStyle"}}>
+    <img {{bindAttr src="view.imageSrc"}} />
+    <div class="mission-description">{{view.content.description}}</div>
+    <div class="mission-agents">@{{view.location}} {{view.time}} min ago</div>
 </div>

@@ -1,4 +1,7 @@
 Kindacts::Application.routes.draw do
+  resources :acts
+
+
   resources :missions
 
 

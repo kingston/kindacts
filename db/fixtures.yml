@@ -27,3 +27,24 @@ missions:
     icon: "coffee.png"
     order: 4
     time: 720
+acts: 
+  -
+    description: "Bought a coffee for a stranger"
+    lat: 3742396
+    lng: -12217294
+    mission: 3
+  -
+    description: "I sent my mom a text of appreciation"
+    lat: 3741396
+    lng: -12217194
+    mission: 2
+  -
+    description: "I helped an old lady with her groceries"
+    lat: 3742596
+    lng: -12217194
+    mission: ~
+  -
+    description: "I gave a friend a free hug :)"
+    lat: 3741596
+    lng: -12216194
+    mission: 1

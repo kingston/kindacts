@@ -7,33 +7,51 @@ KindActs.MapView = Ember.View.extend
   actMarkerMap: null
   glowMarkerMap: null
 
+  lastInfoWindowOpened: null
+
   destroy: ->
     @_super()
     clearTimeout(@get('stopAnimationTimeoutId')) if @get('stopAnimationTimeoutId')
 
   addAct: (act) ->
     return unless @get('map')
-    pos = new google.maps.LatLng(act.lat, act.long)
+    return if @get('isDestroyed')
+    pos = new google.maps.LatLng(act.get('realLat'), act.get('realLng'))
     primaryActId = @get('controller.primaryActId')
     marker = new google.maps.Marker
       position: pos
       map: @get('map')
-      title: act.title
+      title: act.get('description')
     @get('actMarkerMap')[act.id] = marker
+
+    contentString = "\"" + act.get('description') + "\""
+    infoWindow = new google.maps.InfoWindow
+      content: contentString
+    google.maps.event.addListener(marker, 'click', =>
+      if @get('lastInfoWindowOpened')
+        @get('lastInfoWindowOpened').close()
+      infoWindow.open(@get('map'), marker)
+      @set('lastInfoWindowOpened', infoWindow)
+    )
+
+
     glow = new KindActs.GlowMarker(
       pos,
-      primaryActId == act.id
+      primaryActId == act.get('id')
       @get('map')
     )
-    @get('glowMarkerMap')[act.id] = glow
+    @get('glowMarkerMap')[act.get('id')] = glow
 
-    if primaryActId == act.id
+    if primaryActId == act.get('id')
       marker = @get('actMarkerMap')[primaryActId]
       marker.setAnimation(google.maps.Animation.BOUNCE)
       @set 'stopAnimationTimeoutId', setTimeout(=>
         marker.setAnimation(null)
         @set 'stopAnimationTimeoutId', null
       , 1800)
+      @get('map').panTo(pos)
+      infoWindow.open(@get('map'), marker)
+      @set('lastInfoWindowOpened', infoWindow)
 
   removeAct: (act) ->
     marker = @get('actMarkerMap')[act.id]
@@ -48,15 +66,14 @@ KindActs.MapView = Ember.View.extend
     @set 'glowMarkerMap', {}
 
   attachArrayObserver: (->
-    return unless @get('map')
     return unless @get('controller')
     obj = Ember.Object.create
       arrayWillChange: Ember.K
       arrayDidChange: (array, start, removeCount, addCount) =>
         if addCount == 1
-          @addAct(array[start])
+          @addAct(array.objectAt(start))
         else if removeCount == 1
-          @removeAct(array[start])
+          @removeAct(array.objectAt(start))
           
     @get('controller').addArrayObserver(obj)
   ).observes('controller')
