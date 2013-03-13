@@ -1,1 +1,3 @@
-KindActs.LandingController = Ember.Controller.extend()
+KindActs.LandingController = Ember.Controller.extend
+  goToWelcome: ->
+    @transitionTo 'welcome'
