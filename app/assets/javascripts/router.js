@@ -1,3 +1,0 @@
-Kindacts.Router.map(function() {
-
-});

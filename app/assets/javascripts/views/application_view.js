@@ -1,2 +1,2 @@
-Kindacts.ApplicationView = Ember.View.extend({
+KindActs.ApplicationView = Ember.View.extend({
 });

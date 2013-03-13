@@ -1,3 +1,3 @@
-Kindacts.ApplicationController = Ember.Controller.extend({
+KindActs.ApplicationController = Ember.Controller.extend({
 
 });

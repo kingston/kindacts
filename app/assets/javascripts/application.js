@@ -17,5 +17,5 @@
 //= require ember-data
 //= require_self
 //= require kindacts
-Kindacts = Ember.Application.create();
+KindActs = Ember.Application.create();
 //= require_tree .

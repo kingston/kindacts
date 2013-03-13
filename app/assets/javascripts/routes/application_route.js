@@ -1,3 +1,3 @@
-Kindacts.ApplicationRoute = Ember.Route.extend({
+KindActs.ApplicationRoute = Ember.Route.extend({
 
 });

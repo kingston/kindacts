@@ -1,3 +1,3 @@
-Kindacts.Store = DS.Store.extend({
+KindActs.Store = DS.Store.extend({
   revision: 11
 });
