@@ -1,0 +1,29 @@
+missions:
+  -
+    description: "Give a free hug to someone"
+    act_autofill: "I gave a free hug to a stranger"
+    color: "#00d0cc"
+    icon: "heart.png"
+    order: 1
+    time: 180
+  -
+    description: "Send a family member a thank you note"
+    act_autofill: "I sent a family member a thank you note!"
+    color: "#f22f4a"
+    icon: "envelope.png"
+    order: 2
+    time: 720
+  -
+    description: "Leave a gift behind somewhere with an anonymous note"
+    act_autofill: "I left a gift behind with an anonymous note"
+    color: "#f22f4a"
+    icon: "flower.png"
+    order: 3
+    time: 720
+  -
+    description: "Secretely buy a stranger a coffee."
+    act_autofill: "I bought a stranger a coffee!"
+    color: "#16a97d"
+    icon: "coffee.png"
+    order: 4
+    time: 720

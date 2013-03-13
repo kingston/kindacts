@@ -1,4 +1,7 @@
 Kindacts::Application.routes.draw do
+  resources :missions
+
+
   get "public/index"
 
   # The priority is based upon order of creation:

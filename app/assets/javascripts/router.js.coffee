@@ -15,6 +15,15 @@ KindActs.IndexRoute = Ember.Route.extend
     else
       @transitionTo 'landing'
 
+KindActs.ChooseMissionRoute = Ember.Route.extend
+  setupController: (controller) ->
+    controller.set('content', KindActs.Mission.find())
+
+KindActs.PostActRoute = Ember.Route.extend
+  setupController: (controller) ->
+    controller.set('actText', @get('applicationController.mission.act_autofill') || "I...")
+
+
 KindActs.ActMapRoute = Ember.Route.extend
   setupController: (controller) ->
     controller.set('content', [])

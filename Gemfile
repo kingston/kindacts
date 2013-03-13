@@ -16,6 +16,8 @@ gem 'rails_config', '~> 0.3.2'
 
 gem 'ember-rails', '~> 0.11.1'
 
+gem "active_model_serializers", "~> 0.7.0"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

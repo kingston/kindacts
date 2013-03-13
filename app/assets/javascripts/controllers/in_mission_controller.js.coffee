@@ -10,11 +10,13 @@ toHHMMSS = (str) ->
   time
 
 KindActs.InMissionController = Ember.Controller.extend
+  needs: ["application"]
   timeLeft: null
   intervalId: null
   timeLeftFormatted: (->
     return toHHMMSS(@get('timeLeft'))
   ).property('timeLeft')
+  missionBinding: "controllers.application.selectedMission"
 
   init: ->
     @_super()

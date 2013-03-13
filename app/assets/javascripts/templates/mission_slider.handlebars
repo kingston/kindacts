@@ -1,11 +1,8 @@
 <div class="mission-slider swipe">
     <div class="swipe-wrap">
-        {{view KindActs.MissionSlideView}}
-        {{view KindActs.MissionSlideView}}
-        {{view KindActs.MissionSlideView}}
-        {{view KindActs.MissionSlideView}}
-        {{view KindActs.MissionSlideView}}
-        {{view KindActs.MissionSlideView}}
+        {{#each mission in controller.content}}
+            {{view KindActs.MissionSlideView contentBinding="mission"}}
+        {{/each}}
     </div>
 </div>
 

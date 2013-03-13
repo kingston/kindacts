@@ -36,7 +36,7 @@ function Swipe(container, options) {
   function setup() {
 
     // cache slides
-    slides = element.children;
+    slides = $(element).children("div").toArray();
 
     // create an array to store current positions of each slide
     slidePos = new Array(slides.length);

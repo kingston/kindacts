@@ -17,9 +17,9 @@
         Just did a mission? Write it up below and post! 
         {{/if}}
         </p>
-        <div class="mission-content">
-            <img src="assets/missions/hands.gif" />
-            <textarea>I gave a someone a free hug</textarea>
+        <div class="mission-content" {{bindAttr style="contentStyle"}}>
+            <img {{bindAttr src="imageSrc"}} />
+            {{view Ember.TextArea valueBinding="actText"}}
         </div>
         <button {{action postAct}} id="post-button" class="btn btn-gray">Post to map</button>
     </div>

@@ -7,7 +7,7 @@
         <div class="timer">
             {{timeLeftFormatted}}
         </div>
-        {{view KindActs.MissionCardView}}
+        {{view KindActs.MissionCardView contentBinding="mission"}}
         <button {{action completeMission}} id="done-button" class="btn btn-gray">Bam! Did it.</button>
     </div>
 </div>

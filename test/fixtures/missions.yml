@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyString
+  act_autofill: MyString
+  icon: MyString
+  color: MyString
+  time: 1
+  order: 1
+
+two:
+  description: MyString
+  act_autofill: MyString
+  icon: MyString
+  color: MyString
+  time: 1
+  order: 1

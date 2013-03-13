@@ -1,7 +1,6 @@
 KindActs.MissionSlideView = Ember.View.extend
   templateName: 'mission_slide'
   isExpanded: false
-  content: null
   classNames: ['mission-slide-view']
 
   toggleExpand: ->
@@ -10,7 +9,7 @@ KindActs.MissionSlideView = Ember.View.extend
 
     if @get 'isExpanded'
       elem.addClass("selected")
-      @get('controller').selectMission()
+      @get('controller').selectMission(@get('content'))
     else
       elem.removeClass("selected")
       @get('controller').clearMission()
