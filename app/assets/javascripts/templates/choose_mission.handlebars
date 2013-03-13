@@ -3,4 +3,9 @@
         <div class="title">Choose Mission</div>
     </div>
     {{view KindActs.MissionSliderView}}
+    {{#if missionSelected }}
+    <div class="content">
+        <button {{action acceptMission}} id="accept-button" class="btn btn-gray">Accept Mission</button>
+    </div>
+    {{/if}}
 </div>

@@ -1,0 +1,13 @@
+<div id="in-mission-page" class="content-page">
+    <div class="header">
+        <div class="title">Kindness Mission</div>
+    </div>
+    <div class="content">
+        <p class="instructions">Shouldn&apos;t take you too long!</p>
+        <div class="timer">
+            {{timeLeftFormatted}}
+        </div>
+        {{view KindActs.MissionCardView}}
+        <button {{action completeMission}} id="done-button" class="btn btn-gray">Bam! Did it.</button>
+    </div>
+</div>

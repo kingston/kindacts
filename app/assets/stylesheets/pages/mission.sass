@@ -1,29 +1,54 @@
 #mission-page
   .mission-slider
     margin-top: 100px
-    margin: 100px 40px 0 40px
+    margin: 100px 45px 0 45px
     overflow: visible
     .swipe-wrap
       overflow: visible
+  #accept-button
+    margin-top: 40px
+
+#in-mission-page
+  .instructions
+    font-size: 15px
+  .timer
+    font-size: 50px
+    margin-bottom: 15px
+  #done-button
+    margin-top: 20px
 
 /* TODO: Should not go here */
 .mission-slider
-  .mission
-    position: relative
-    .mission-description
-      margin-top: 20px
-      color: white
-    .mission-agents
-      position: absolute
-      bottom: 10px
-      right: 10px
-      font-size: 0.8em
-      color: white
-    .mission-content
-      width: 200px
-      height: 200px
-      border-radius: 5px
-      padding: 15px
-      background-color: #00CFCC
-      margin: 0 auto
+  .mission-content
+    width: 200px
+    height: 200px
+    &.selected
+      width: 240px
+      margin-top: -20px
+      height: 240px
+.mission-content
+  width: 100%
+  height: 200px
+  cursor: pointer
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  border-radius: 5px
+  padding: 15px
+  background-color: #00CFCC
+  margin: 0 auto
+  position: relative
+  +box-sizing(border-box)
+  +transition(margin 200ms)
+  +transition(height 200ms)
+  +transition(width 200ms)
+
+  .mission-description
+    margin-top: 20px
+    color: white
+    width: 170px
+  .mission-agents
+    position: absolute
+    bottom: 10px
+    right: 25px
+    font-size: 0.8em
+    color: white
 

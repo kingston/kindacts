@@ -3,9 +3,15 @@ KindActs.MissionSliderView = Ember.View.extend
   templateName: 'mission_slider'
 
   didInsertElement: ->
-    elem = $(@get('element')).find(".mission-slider").get(0)
+    $elem = $(@get('element')).find(".mission-slider")
+    elem = $elem.get(0)
 
     @set 'swiper', new Swipe(elem,
       disableScroll: true
-      auto: 2000
+      swiping: ->
+        Ember.View.views[$elem.find(".mission-content.selected").parent().parent().attr('id')].toggleExpand()
+        
     )
+
+  willDestroyElement: ->
+    @get('swiper').kill()

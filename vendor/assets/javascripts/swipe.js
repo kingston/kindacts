@@ -102,7 +102,6 @@ function Swipe(container, options) {
       //move(to, 0, slideSpeed || speed);
 
     } else {
-
       animate(index * -width, to * -width, slideSpeed || speed);
 
     }
@@ -263,6 +262,10 @@ function Swipe(container, options) {
       // determine if scrolling test has run - one time test
       if ( typeof isScrolling == 'undefined') {
         isScrolling = !!( isScrolling || Math.abs(delta.x) < Math.abs(delta.y) );
+        if (!isScrolling) {
+          // trigger move event
+          options.swiping && options.swiping(index);
+        }
       }
 
       // if user is not trying to scroll vertically
@@ -318,16 +321,26 @@ function Swipe(container, options) {
 
           if (direction) {
 
-            move(index-1, -width, 0);
+            move(index-1, -(2 * width), 0);
             move(index, slidePos[index]-width, speed);
             move(index+1, slidePos[index+1]-width, speed);
+            for (var i = 0; i < slides.length; i++) {
+              if (Math.abs(index - i) > 1) {
+                move(i, width * (i - index - 1), speed);
+              }
+            }
             index += 1;
 
           } else {
 
-            move(index+1, width, 0);
+            move(index+1, 2 * width, 0);
             move(index, slidePos[index]+width, speed);
             move(index-1, slidePos[index-1]+width, speed);
+            for (var i = 0; i < slides.length; i++) {
+              if (Math.abs(index - i) > 1) {
+                move(i, width * (i - index + 1), speed);
+              }
+            }
             index += -1;
 
           }
