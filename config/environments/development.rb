@@ -34,4 +34,7 @@ Kindacts::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Dev version of ember
+  config.ember.variant = :development
 end
