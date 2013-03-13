@@ -33,7 +33,7 @@ KindActs.MapView = Ember.View.extend
       @set 'stopAnimationTimeoutId', setTimeout(=>
         marker.setAnimation(null)
         @set 'stopAnimationTimeoutId', null
-      , 900)
+      , 1800)
 
   removeAct: (act) ->
     marker = @get('actMarkerMap')[act.id]
