@@ -2,6 +2,7 @@ KindActs.MissionSlideView = Ember.View.extend
   templateName: 'mission_slide'
   isExpanded: false
   content: null
+  classNames: ['mission-slide-view']
 
   toggleExpand: ->
     elem = $(@get('element')).find(".mission-content")

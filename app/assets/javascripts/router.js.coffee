@@ -14,7 +14,6 @@ KindActs.IndexRoute = Ember.Route.extend
       @transitionTo 'act_map'
     else
       @transitionTo 'landing'
-      @set('applicationController.isOnboarding', true)
 
 KindActs.ActMapRoute = Ember.Route.extend
   setupController: (controller) ->

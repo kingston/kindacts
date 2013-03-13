@@ -1,8 +1,8 @@
 <div id="act-map-page" class="content-page">
     <div class="header">
-        <button {{action showList}} class="nav-btn left-nav">List</button>
+        <button {{action showList}} class="nav-btn left-nav list-btn"></button>
         <div class="title">Local Acts</div>
-        <button {{action addAct}} class="nav-btn right-nav">Add</button>
+        <button {{action addAct}} class="nav-btn right-nav add-btn"></button>
     </div>
     <div class="content">
         {{view KindActs.MapView}}

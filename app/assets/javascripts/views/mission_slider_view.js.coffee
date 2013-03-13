@@ -9,7 +9,9 @@ KindActs.MissionSliderView = Ember.View.extend
     @set 'swiper', new Swipe(elem,
       disableScroll: true
       swiping: ->
-        Ember.View.views[$elem.find(".mission-content.selected").parent().parent().attr('id')].toggleExpand()
+        view = $elem.find(".mission-content.selected").closest(".mission-slide-view")
+        if view.length > 0
+          Ember.View.views[view.attr('id')].toggleExpand()
         
     )
 

@@ -10,4 +10,5 @@ KindActs.PostActController = Ember.Controller.extend
     @transitionTo 'act_map'
 
   postAct: ->
+    @set 'controllers.application.isOnboarding', false
     @transitionTo "act_map"

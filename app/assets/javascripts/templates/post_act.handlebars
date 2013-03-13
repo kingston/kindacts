@@ -2,9 +2,9 @@
     <div class="header">
         {{#unless controllers.application.isOnboarding }}
         {{#if controllers.application.isFromMap }}
-            <button {{action showMap}} class="nav-btn left-nav">Map</button>
+            <button {{action showMap}} class="nav-btn left-nav back-btn"></button>
         {{else}}
-            <button {{action showList}} class="nav-btn left-nav">List</button>
+            <button {{action showList}} class="nav-btn left-nav back-btn"></button>
         {{/if}}
         {{/unless}}
         <div class="title">Post Act</div>
